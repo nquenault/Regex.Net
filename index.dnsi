@@ -1,0 +1,29 @@
+<dnsi>
+	<target value="winexe" />
+	<autorun value="true" />
+	<entrypoint value="frmMain" />
+	<showsource value="false" />
+	<!--<shortcut icon="./icons/regex.ico" />-->
+	<!--<shortcut target="desktop" value="Regex.Net Online" />-->
+	<!--<shortcut target="startmenu" value="Regex.Net/Regex.Net Online" />-->
+	<!--<link src="./MyProject/Application.Designer.vb" />-->
+
+	<link src="./Regex.Net/MyProject/AssemblyInfo.vb" />
+	<link src="./Regex.Net/MyProject/Resources.Designer.vb" />
+	<link src="./Regex.Net/MyProject/Settings.Designer.vb" />
+
+	<link src="./Regex.Net/Forms/frmMain.vb" type="form" />
+	<link src="./Regex.Net/Forms/frmMemento.vb" type="form" />
+	<link src="./Regex.Net/Forms/frmMinijeu.vb" type="form" />
+
+	<link src="./Regex.Net/NETExtensions.Part.vb" />
+	<link src="./Regex.Net/StatusProperties.vb" />
+
+	<resource name="fct" src="./Regex.Net/Resources/fct.PNG" />
+	<resource name="lightbroken" src="./Regex.Net/Resources/lightbroken.PNG" />
+	<resource name="lightbrokenb" src="./Regex.Net/Resources/lightbrokenb.PNG" />
+	<resource name="lightoff" src="./Regex.Net/Resources/lightoff.PNG" />
+	<resource name="lighton" src="./Regex.Net/Resources/lighton.PNG" />
+	<resource name="run" src="./Regex.Net/Resources/run.PNG" />
+	<resource name="struc" src="./Regex.Net/Resources/struc.PNG" />
+</dnsi>

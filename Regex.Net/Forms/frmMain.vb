@@ -288,20 +288,20 @@ Public Class frmMain
 
 #Region "AboutBox..."
     Private Sub AProposToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AProposToolStripMenuItem.Click
-        Dim message =
-            <string>
+    Dim message =
+        <string>
                 &lt;<%= Regex.Replace(Application.ProductName, "\W", "").ToLower %> name="<%= Application.ProductName %>" version="<%= Application.ProductVersion %>" type="text/html"&gt;
                 \t&lt;about type="message"&gt;&lt;![CDATA[
-                \t\tMerci de rapporter tous bugs à nicolas.quenault@isisoft.fr.
+                \t\tMerci de rapporter tous bugs à nicolas.quenault@gmail.com.
                 \t]]&gt;&lt;/about&gt;
                 &lt;<%= Regex.Replace(Application.ProductName, "\W", "").ToLower %>&gt;
             </string>.Value
 
-        message =
-            <string>
-                /* <%= Application.ProductName %> v<%= Application.ProductVersion %> */
+    message =
+        <string>
+          <%= Application.ProductName %> v<%= Application.ProductVersion %>
                 \t
-                /*-=[ Merci de rapporter tous bugs à nicolas.quenault@isisoft.fr ]=-*/
+                website : https://github.com/nquenault/Regex.Net
             </string>.Value
 
         MsgBox(
@@ -1117,4 +1117,42 @@ Public Class frmMain
     End Sub
 #End Region
 
+  Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
+    Dim targetListView As ListView = Nothing
+
+    If MainTabControl.SelectedIndex = 2 Then
+      targetListView = lstMatchGroups
+    ElseIf MainTabControl.SelectedIndex = 3 Then
+      targetListView = lstMatchesGroups
+    End If
+
+    If Not targetListView Is Nothing Then
+      Dim data As String = ""
+
+      For Each item As ListViewItem In targetListView.Items
+        data &= "{" & vbNewLine
+
+        Dim colIndex = 0
+        For Each subitem As ListViewItem.ListViewSubItem In item.SubItems
+          Dim col = targetListView.Columns(colIndex)
+          data &= vbTab & """" & col.Text & """: """ & subitem.Text.Replace("""", "\""") & """," & vbNewLine
+          colIndex += 1
+        Next
+
+        If data.EndsWith("," & vbNewLine) Then
+          data = data.Substring(0, data.Length - ("," & vbNewLine).Length) & vbNewLine
+        End If
+
+        data &= "}," & vbNewLine
+      Next
+
+      If data.EndsWith("," & vbNewLine) Then
+        data = data.Substring(0, data.Length - ("," & vbNewLine).Length)
+      End If
+
+      MsgBox(data)
+
+      Clipboard.SetText(data)
+    End If
+  End Sub
 End Class

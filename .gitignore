@@ -49,6 +49,7 @@ Temporary Items
 # Visual Studio
 *.pdb
 *.suo
+*.xml
 #*.png
 *.jpg
 *.gif
