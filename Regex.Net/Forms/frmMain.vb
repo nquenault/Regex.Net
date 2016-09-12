@@ -263,7 +263,8 @@ Public Class frmMain
 
 #Region "AboutBox..."
     Private Sub AProposToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AProposToolStripMenuItem.Click
-    frmAbout.Show()
+    Dim t = New frmAbout()
+    t.ShowDialog()
     End Sub
 #End Region
 
