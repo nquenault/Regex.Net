@@ -48,6 +48,7 @@ Temporary Items
 
 # Visual Studio
 *.settings
+*.bak
 *.pdb
 *.suo
 *.xml
