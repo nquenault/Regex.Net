@@ -1,4 +1,4 @@
-﻿Imports System.Text.RegularExpressions
+Imports System.Text.RegularExpressions
 
 Public Class frmMain
     Private StatusList As New Dictionary(Of String, StatusProperties)

@@ -47,6 +47,7 @@ Temporary Items
 .apdisk
 
 # Visual Studio
+*.settings
 *.pdb
 *.suo
 *.xml
