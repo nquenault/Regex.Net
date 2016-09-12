@@ -20,7 +20,7 @@
 	<link src="./StatusProperties.vb" />
 
 	<resource name="fct" src="./Resources/fct.PNG" />
-	<resource name="lightbroken" src="./esources/lightbroken.PNG" />
+	<resource name="lightbroken" src="./Resources/lightbroken.PNG" />
 	<resource name="lightbrokenb" src="./Resources/lightbrokenb.PNG" />
 	<resource name="lightoff" src="./Resources/lightoff.PNG" />
 	<resource name="lighton" src="./Resources/lighton.PNG" />
