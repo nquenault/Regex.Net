@@ -7,9 +7,9 @@
 
 	<icon src="./icons/regex.ico" />
 
-	<link src="./MyProject/AssemblyInfo.vb" />
-	<link src="./MyProject/Resources.Designer.vb" />
-	<link src="./MyProject/Settings.Designer.vb" />
+	<link src="./My Project/AssemblyInfo.vb" />
+	<link src="./My Project/Resources.Designer.vb" />
+	<link src="./My Project/Settings.Designer.vb" />
 
 	<link src="./Forms/frmMain.vb" type="form" />
 	<link src="./Forms/frmMemento.vb" type="form" />
@@ -19,11 +19,11 @@
 	<link src="./NETExtensions.Part.vb" />
 	<link src="./StatusProperties.vb" />
 
-	<resource name="fct" src="./Regex.Net/Resources/fct.PNG" />
-	<resource name="lightbroken" src="./Regex.Net/Resources/lightbroken.PNG" />
-	<resource name="lightbrokenb" src="./Regex.Net/Resources/lightbrokenb.PNG" />
-	<resource name="lightoff" src="./Regex.Net/Resources/lightoff.PNG" />
-	<resource name="lighton" src="./Regex.Net/Resources/lighton.PNG" />
-	<resource name="run" src="./Regex.Net/Resources/run.PNG" />
-	<resource name="struc" src="./Regex.Net/Resources/struc.PNG" />
+	<resource name="fct" src="./Resources/fct.PNG" />
+	<resource name="lightbroken" src="./esources/lightbroken.PNG" />
+	<resource name="lightbrokenb" src="./Resources/lightbrokenb.PNG" />
+	<resource name="lightoff" src="./Resources/lightoff.PNG" />
+	<resource name="lighton" src="./Resources/lighton.PNG" />
+	<resource name="run" src="./Resources/run.PNG" />
+	<resource name="struc" src="./Resources/struc.PNG" />
 </dnsi>
