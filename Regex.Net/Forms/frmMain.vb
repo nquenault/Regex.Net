@@ -288,27 +288,7 @@ Public Class frmMain
 
 #Region "AboutBox..."
     Private Sub AProposToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AProposToolStripMenuItem.Click
-    Dim message =
-        <string>
-                &lt;<%= Regex.Replace(Application.ProductName, "\W", "").ToLower %> name="<%= Application.ProductName %>" version="<%= Application.ProductVersion %>" type="text/html"&gt;
-                \t&lt;about type="message"&gt;&lt;![CDATA[
-                \t\tMerci de rapporter tous bugs à nicolas.quenault@gmail.com.
-                \t]]&gt;&lt;/about&gt;
-                &lt;<%= Regex.Replace(Application.ProductName, "\W", "").ToLower %>&gt;
-            </string>.Value
-
-    message =
-        <string>
-          <%= Application.ProductName %> v<%= Application.ProductVersion %>
-                \t
-                website : https://github.com/nquenault/Regex.Net
-            </string>.Value
-
-        MsgBox(
-            Regex.Replace(message.Trim, "(\r|\n)(\t|\s)*", "$1").Replace("\t", vbTab),
-            MsgBoxStyle.Information + MsgBoxStyle.OkOnly,
-            Application.ProductName
-        )
+    frmAbout.Show()
     End Sub
 #End Region
 
