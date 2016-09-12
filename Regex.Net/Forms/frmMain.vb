@@ -1,4 +1,5 @@
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
+Imports System.Runtime.InteropServices
 
 Public Class frmMain
     Private StatusList As New Dictionary(Of String, StatusProperties)
@@ -25,30 +26,30 @@ Public Class frmMain
             .Title = "Ouvrir un fichier..."
             .ShowDialog()
 
-            If Not .FileName.Trim = "" AndAlso My.Computer.FileSystem.FileExists(.FileName) Then
-                Dim fileContent As String = My.Computer.FileSystem.ReadAllText(.FileName)
+      If Not .FileName.Trim = "" AndAlso IO.File.Exists(.FileName) Then
+        Dim fileContent As String = IO.File.ReadAllText(.FileName)
 
-                UpdateOnChanges = False
+        UpdateOnChanges = False
 
-                Select Case MainTabControl.SelectedTab.Name.ToLower.Replace("tab", "")
-                    Case "replace"
-                        txtReplaceSource.Text = fileContent
-                    Case "ismatch"
-                        txtIsMatchSource.Text = fileContent
-                    Case "match"
-                        txtMatchSource.Text = fileContent
-                    Case "matches"
-                        txtMatchesSource.Text = fileContent
-                    Case "split"
-                        txtSplitSource.Text = fileContent
-                    Case "escape"
-                        txtEscapeSource.Text = fileContent
-                    Case "unescape"
-                        txtUnescapeSource.Text = fileContent
-                End Select
+        Select Case MainTabControl.SelectedTab.Name.ToLower.Replace("tab", "")
+          Case "replace"
+            txtReplaceSource.Text = fileContent
+          Case "ismatch"
+            txtIsMatchSource.Text = fileContent
+          Case "match"
+            txtMatchSource.Text = fileContent
+          Case "matches"
+            txtMatchesSource.Text = fileContent
+          Case "split"
+            txtSplitSource.Text = fileContent
+          Case "escape"
+            txtEscapeSource.Text = fileContent
+          Case "unescape"
+            txtUnescapeSource.Text = fileContent
+        End Select
 
-                UpdateOnChanges = ExécutionInstantannToolStripMenuItem.Checked
-            End If
+        UpdateOnChanges = ExécutionInstantannToolStripMenuItem.Checked
+      End If
         End With
     End Sub
 #End Region
@@ -133,75 +134,63 @@ Public Class frmMain
     End Sub
 
     Private Sub EmailToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles EmailToolStripMenuItem1.Click
-        ShowExemple(
-            "ismatch",
-            Regex.Replace(
-                <string>
-                    Voici la liste des inscrits :
-                    -----------------------------------
-                    1) soweak@gmail.com
-                    2) pois0n@yahoo.com
-                    3) v1ndicator@starbucks.com
-                    4) starshoot@deadhost.it
-                    -----------------------------------
-                    Pour toutes inscriptions, merci de nous contacter à l'adresse suivante :
-                    inscription@here.de
-                </string>.Value.Trim,
-                "(\r|\n)(\t|\s)*",
-                "$1"
-            ),
-            "([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})",
-            RegexOptions.IgnoreCase +
-            RegexOptions.Multiline
-        )
+    Dim example As String = "Voici la liste des inscrits :\n"
+    example &= "-----------------------------------\n"
+    example &= "1) soweak@gmail.com\n"
+    example &= "2) pois0n@yahoo.com\n"
+    example &= "3) v1ndicator@starbucks.com\n"
+    example &= "4) starshoot@deadhost.it\n"
+    example &= "-----------------------------------\n"
+    example &= "Pour toutes inscriptions, merci de nous contacter à l'adresse suivante :\n"
+    example &= "inscription@here.de\n"
+
+    ShowExemple(
+      "ismatch",
+      example.Replace("\n", vbCrLf),
+      "([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})",
+       RegexOptions.IgnoreCase +
+       RegexOptions.Multiline
+    )
     End Sub
 
     Private Sub EmailToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EmailToolStripMenuItem.Click
-        ShowExemple(
-            "match",
-            Regex.Replace(
-                <string>
-                    Voici la liste des inscrits :
-                    -----------------------------------
-                    1) soweak@gmail.com
-                    2) pois0n@yahoo.com
-                    3) v1ndicator@starbucks.com
-                    4) starshoot@deadhost.it
-                    -----------------------------------
-                    Pour toutes inscriptions, merci de nous contacter à l'adresse suivante :
-                    inscription@here.de
-                </string>.Value.Trim,
-                "(\r|\n)(\t|\s)*",
-                "$1"
-            ),
-            "([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})",
-            RegexOptions.IgnoreCase +
-            RegexOptions.Multiline
-        )
+    Dim example As String = "Voici la liste des inscrits :\n"
+    example &= "-----------------------------------\n"
+    example &= "1) soweak@gmail.com\n"
+    example &= "2) pois0n@yahoo.com\n"
+    example &= "3) v1ndicator@starbucks.com\n"
+    example &= "4) starshoot@deadhost.it\n"
+    example &= "-----------------------------------\n"
+    example &= "Pour toutes inscriptions, merci de nous contacter à l'adresse suivante :\n"
+    example &= "inscription@here.de\n"
+
+    ShowExemple(
+        "match",
+        example.Replace("\n", vbCrLf),
+        "([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})",
+        RegexOptions.IgnoreCase +
+        RegexOptions.Multiline
+    )
     End Sub
 
     Private Sub EmailsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EmailsToolStripMenuItem.Click
-        ShowExemple(
-            "matches",
-            Regex.Replace(
-                <string>
-                    Voici la liste des inscrits :
-                    -----------------------------------
-                    1) soweak@gmail.com
-                    2) pois0n@yahoo.com
-                    3) v1ndicator@starbucks.com
-                    4) starshoot@deadhost.it
-                    -----------------------------------
-                    Pour toutes inscriptions, merci de nous contacter à l'adresse suivante :
-                    inscription@here.de
-                </string>.Value.Trim,
-                "(\r|\n)(\t|\s)*",
-                "$1"
-            ),
-            "([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})",
-            RegexOptions.IgnoreCase +
-            RegexOptions.Multiline
-        )
+		Dim example as string = "Voici la liste des inscrits :\n"
+    example &= "-----------------------------------\n"
+    example &= "1) soweak@gmail.com\n"
+    example &= "2) pois0n@yahoo.com\n"
+    example &= "3) v1ndicator@starbucks.com\n"
+    example &= "4) starshoot@deadhost.it\n"
+    example &= "-----------------------------------\n"
+    example &= "Pour toutes inscriptions, merci de nous contacter à l'adresse suivante :\n"
+    example &= "inscription@here.de\n"
+
+    ShowExemple(
+        "matches",
+        example.Replace("\n", vbCrLf),
+        "([A-Z0-9._%+-]+)@([A-Z0-9.-]+)\.([A-Z]{2,4})",
+        RegexOptions.IgnoreCase +
+        RegexOptions.Multiline
+    )
     End Sub
 
     Private Sub EstUneAdresseEmailToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EstUneAdresseEmailToolStripMenuItem.Click
@@ -215,65 +204,51 @@ Public Class frmMain
     End Sub
 
     Private Sub NomDhôteParRienToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NomDhôteParRienToolStripMenuItem.Click
-        ShowExemple(
-            "replace",
-            Regex.Replace(
-                <string>
-                    Voici la liste des inscrits :
-                    -----------------------------------
-                    1) soweak@gmail.com
-                    2) pois0n@yahoo.com
-                    3) v1ndicator@starbucks.com
-                    4) starshoot@deadhost.it
-                    -----------------------------------
-                    Pour toutes inscriptions, merci de nous contacter à l'adresse suivante :
-                    inscription@here.de
-                </string>.Value.Trim,
-                "(\r|\n)(\t|\s)*",
-                "$1"
-            ).Replace("\t", vbTab),
-            "(@)(([A-Z0-9.-]+)\.([A-Z]{2,4}))(?#Remplace tous les ""@[host].[tld]"" par "" sur http://[host].[tld]/)",
-            RegexOptions.IgnoreCase +
-            RegexOptions.Multiline,
-            " sur http://www.$2/"
-        )
+		Dim example as string = "Voici la liste des inscrits :\n"
+    example &= "-----------------------------------\n"
+    example &= "1) soweak@gmail.com\n"
+    example &= "2) pois0n@yahoo.com\n"
+    example &= "3) v1ndicator@starbucks.com\n"
+    example &= "4) starshoot@deadhost.it\n"
+    example &= "-----------------------------------\n"
+    example &= "Pour toutes inscriptions, merci de nous contacter à l'adresse suivante :\n"
+    example &= "inscription@here.de\n"
+
+    ShowExemple(
+      "replace",
+      example.Replace("\n", vbCrLf),
+      "(@)(([A-Z0-9.-]+)\.([A-Z]{2,4}))(?#Remplace tous les ""@[host].[tld]"" par "" sur http://[host].[tld]/)",
+      RegexOptions.IgnoreCase +
+      RegexOptions.Multiline,
+      " sur http://www.$2/"
+    )
     End Sub
 
     Private Sub CSVToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CSVToolStripMenuItem.Click
         ShowExemple(
-            "split",
-            Regex.Replace(
-                <string>
-                    1;2;3;4;5;6;7;8;9;10;11;12;13
-                </string>.Value.Trim,
-                "(\r|\n)(\t|\s)*",
-                "$1"
-            ),
-            ";",
-            RegexOptions.IgnoreCase +
-            RegexOptions.Multiline
-        )
+        "split",
+        "1;2;3;4;5;6;7;8;9;10;11;12;13",
+        ";",
+        RegexOptions.IgnoreCase +
+        RegexOptions.Multiline
+    )
     End Sub
 
     Private Sub CSVToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles CSVToolStripMenuItem1.Click
-        ShowExemple(
-            "matches",
-            Regex.Replace(
-                <string>
-                    nom;prenom;age;email
-                    Deloin;Alain;49;alain.deloin@carachat.com
-                    Ratamère;Valdi;12;pokipsy@adolescents.it
-                    Léponge;Bob;14;lefonde@locean.pac
-                    Pasredford;Robert;57;rp@earth.org
-                    De Rappel;Piqure Tétanique;28;ptdr@linux.ru
-                </string>.Value.Trim,
-                "(\r|\n)(\t|\s)*",
-                "$1"
-            ),
-            "^([^;\r\n]*?);([^;\r\n]*?);([^;\r\n]*?);([^,\r\n]*?)$",
-            RegexOptions.IgnoreCase +
-            RegexOptions.Multiline
-        )
+		Dim example as string = "nom;prenom;age;email"
+    example &= "Deloin;Alain;49;alain.deloin@carachat.com\n"
+    example &= "Ratamère;Valdi;12;pokipsy@adolescents.it\n"
+    example &= "Léponge;Bob;14;lefonde@locean.pac\n"
+    example &= "Pasredford;Robert;57;rp@earth.org\n"
+    example &= "De Rappel;Piqure Tétanique;28;ptdr@linux.ru\n"
+
+    ShowExemple(
+        "matches",
+        example.Replace("\n", vbCrLf),
+        "^([^;\r\n]*?);([^;\r\n]*?);([^;\r\n]*?);([^,\r\n]*?)$",
+        RegexOptions.IgnoreCase +
+        RegexOptions.Multiline
+    )
     End Sub
 
     Private Sub ConditionsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConditionsToolStripMenuItem.Click
@@ -500,7 +475,7 @@ Public Class frmMain
                          Optional lang As String = Nothing)
 
         ' Récupère la lang système de format <languagecode2>-<contry/regioncode2> (eg: en-EN, fr-FR)
-        lang = lang.SetIfNullOrEmpty(My.Computer.Info.InstalledUICulture.Name.ToLower)
+    lang = System.Globalization.CultureInfo.InstalledUICulture.Name
 
         Dim link = "http:/" & "/msdn.microsoft.com/" & lang & "/library/" & namespaceName.ToLower
 
@@ -623,61 +598,61 @@ Public Class frmMain
 
     <DebuggerHidden()>
     Private Sub ProceedSplit()
-        SimpleThreadExecute(
-            Sub(threadProc As Threading.Thread)
-                lstSplitResults.Items.Clear()
+    SimpleThreadExecute(
+        Sub(threadProc As Threading.Thread)
+              lstSplitResults.Items.Clear()
 
-                Try
-                    Dim results() As String = Nothing
+              Try
+                Dim results() As String = Nothing
 
-                    TryCallDelegate(
-                        Sub()
-                            Try
-                                results = Regex.Split(
-                                    txtSplitSource.Text,
-                                    txtSplitPattern.Text,
-                                    GetRegexOptions()
-                                )
-                            Catch ex As Exception
-                                updateStatus("tabSplit", "Error : " & ex.Message, False)
-                            End Try
+                TryCallDelegate(
+                    Sub()
+                          Try
+                            results = Regex.Split(
+                                txtSplitSource.Text,
+                                txtSplitPattern.Text,
+                                GetRegexOptions()
+                            )
+                          Catch ex As Exception
+                            updateStatus("tabSplit", "Error : " & ex.Message, False)
+                          End Try
                         End Sub,
-                        Me
-                    )
+                    Me
+                )
 
-                    If IsNothing(results) Then
-                        Exit Sub
-                    End If
+                If IsNothing(results) Then
+                  Exit Sub
+                End If
 
-                    Dim i As Integer
-                    For i = 0 To results.Count - 1
-                        updateStatus("tabSplit", "Spliting... (" & i & "/" & results.Count - 1 & ")", True, i + 1, results.Count)
+                Dim i As Integer
+                For i = 0 To results.Length - 1
+                  updateStatus("tabSplit", "Spliting... (" & i & "/" & results.Count - 1 & ")", True, i + 1, results.Count)
 
-                        Threading.Thread.Sleep(5)
-                        Application.DoEvents()
+                  Threading.Thread.Sleep(5)
+                  Application.DoEvents()
 
-                        If Not threadProc.IsAlive Then
-                            Exit For
-                        End If
+                  If Not threadProc.IsAlive Then
+                    Exit For
+                  End If
 
-                        TryCallDelegate(
-                            Sub()
-                                lstSplitResults.Items.Add(i)
-                                If Not IsNothing(lstSplitResults.Items(i)) Then
-                                    lstSplitResults.Items(i).SubItems.Add(PartialEscape(results(i)))
-                                End If
+                  TryCallDelegate(
+                      Sub()
+                              lstSplitResults.Items.Add(i)
+                              If Not IsNothing(lstSplitResults.Items(i)) Then
+                                lstSplitResults.Items(i).SubItems.Add(PartialEscape(results(i)))
+                              End If
                             End Sub,
-                            Me
-                        )
-                    Next
+                      Me
+                  )
+                Next
 
-                    updateStatus("tabSplit", pbVisible:=False, textVisible:=False)
-                Catch ex As Exception
-                    updateStatus("tabSplit", "Error : " & ex.Message, False)
-                End Try
+                updateStatus("tabSplit", pbVisible:=False, textVisible:=False)
+              Catch ex As Exception
+                updateStatus("tabSplit", "Error : " & ex.Message, False)
+              End Try
             End Sub,
-            ThreadName:="threadSplit"
-        )
+        ThreadName:="threadSplit"
+    )
     End Sub
 #End Region
 
