@@ -16,7 +16,8 @@ Public Class frmMain
     End Sub
 
     Private Sub NouvellePartieToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NouvellePartieToolStripMenuItem.Click
-        frmMinijeu.Show()
+    Dim t = New frmMinijeu()
+    t.ShowDialog()
     End Sub
 
     Private Sub OuvrirToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OuvrirToolStripMenuItem.Click
@@ -117,7 +118,8 @@ Public Class frmMain
     End Sub
 
     Private Sub MementoRapideToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MementoRapideToolStripMenuItem.Click
-        frmMemento.Show()
+    Dim t = New frmMemento()
+    t.ShowDialog()
     End Sub
 #End Region
 
