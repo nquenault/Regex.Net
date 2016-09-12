@@ -42,11 +42,11 @@ Module NETExtensions
     End Function
 
     Public Function GetFileContentStream(filepath As String) As IO.Stream
-        If Not My.Computer.FileSystem.FileExists(filepath) Then
-            Return Nothing
-        End If
+    If Not IO.File.Exists(filepath) Then
+      Return Nothing
+    End If
 
-        Dim fileContent = My.Computer.FileSystem.ReadAllBytes(filepath)
+    Dim fileContent = IO.File.ReadAllBytes(filepath)
         Dim stream = New IO.StreamWriter(New IO.MemoryStream(fileContent))
         Return stream.BaseStream
     End Function
@@ -56,9 +56,9 @@ Module NETExtensions
                                               Optional extensionsSperator As String = "|") As String
 
         For Each extension In extensions.Split(extensionsSperator)
-            If My.Computer.FileSystem.FileExists(baseFileName & "." & extension) Then
-                Return baseFileName & "." & extension
-            End If
+      If IO.File.Exists(baseFileName & "." & extension) Then
+        Return baseFileName & "." & extension
+      End If
         Next
 
         Return Nothing
@@ -308,7 +308,7 @@ Module NETExtensions
         Return result
     End Function
 
-    Private VariableColumnsList As New Dictionary(Of String, Windows.Forms.ColumnHeader)
+  Private VariableColumnsList As New Dictionary(Of String, System.Windows.Forms.ColumnHeader)
 
     <Extension()>
     Public Function SetVariableColumnWidth(value As ListView,
@@ -320,22 +320,22 @@ Module NETExtensions
             VariableColProvertyValueFilter = VariableColProvertyValueFilter.ToLower
         End If
 
-        For Each col As Windows.Forms.ColumnHeader In value.Columns
-            Dim propValue = ObjectPropertyValue(col, VariableColPropertyIdentification, "").ToString
+    For Each col As System.Windows.Forms.ColumnHeader In value.Columns
+      Dim propValue = ObjectPropertyValue(col, VariableColPropertyIdentification, "").ToString
 
-            If Not CaseSensitive Then
-                propValue = propValue.ToLower
-            End If
+      If Not CaseSensitive Then
+        propValue = propValue.ToLower
+      End If
 
-            If propValue Like VariableColProvertyValueFilter Then
-                If VariableColumnsList.ContainsKey(value.Name) Then
-                    VariableColumnsList(value.Name) = col
-                Else
-                    VariableColumnsList.Add(value.Name, col)
-                End If
-                Exit For
-            End If
-        Next
+      If propValue Like VariableColProvertyValueFilter Then
+        If VariableColumnsList.ContainsKey(value.Name) Then
+          VariableColumnsList(value.Name) = col
+        Else
+          VariableColumnsList.Add(value.Name, col)
+        End If
+        Exit For
+      End If
+    Next
 
         Dim proc =
              Sub(sender As Object, e As EventArgs)
