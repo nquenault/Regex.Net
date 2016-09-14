@@ -350,6 +350,8 @@ Public Class frmMain
 
     Me.ImageList1.Images.Add("fct.PNG", fct)
     Me.ImageList1.Images.Add("prop.PNG", prop)
+
+    MainTabControl.Refresh()
   End Sub
 
     Private Sub frmMain_Load(sender As Object, e As System.EventArgs) Handles Me.Load

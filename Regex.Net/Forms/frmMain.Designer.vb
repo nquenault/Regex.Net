@@ -58,6 +58,8 @@ Partial Class frmMain
     Me.colMatchGroupsCaptures = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
     Me.colMatchGroupsSuccess = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
     Me.colMatchGroupsValue = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+    Me.Group_ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+    Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
     Me.tabCaptures = New System.Windows.Forms.TabPage()
     Me.lstMatchCaptures = New System.Windows.Forms.ListView()
     Me.colMatchCapturesNum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -172,8 +174,6 @@ Partial Class frmMain
     Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
     Me.ToolStripButtonSingleline = New System.Windows.Forms.ToolStripButton()
     Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-    Me.Group_ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-    Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
     Me.MainTabControl.SuspendLayout()
     Me.tabReplace.SuspendLayout()
     Me.GroupBox3.SuspendLayout()
@@ -196,6 +196,7 @@ Partial Class frmMain
     Me.SplitContainer6.SuspendLayout()
     Me.TabControl2.SuspendLayout()
     Me.tabGroups.SuspendLayout()
+    Me.Group_ContextMenuStrip1.SuspendLayout()
     Me.tabCaptures.SuspendLayout()
     Me.tabMatches.SuspendLayout()
     Me.GroupBox6.SuspendLayout()
@@ -227,7 +228,6 @@ Partial Class frmMain
     Me.StatusStrip1.SuspendLayout()
     Me.MenuStrip1.SuspendLayout()
     Me.ToolStrip1.SuspendLayout()
-    Me.Group_ContextMenuStrip1.SuspendLayout()
     Me.SuspendLayout()
     '
     'MainTabControl
@@ -594,6 +594,18 @@ Partial Class frmMain
     Me.colMatchGroupsValue.Text = "Value"
     Me.colMatchGroupsValue.Width = 349
     '
+    'Group_ContextMenuStrip1
+    '
+    Me.Group_ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyToolStripMenuItem})
+    Me.Group_ContextMenuStrip1.Name = "Group_ContextMenuStrip1"
+    Me.Group_ContextMenuStrip1.Size = New System.Drawing.Size(103, 26)
+    '
+    'CopyToolStripMenuItem
+    '
+    Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
+    Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
+    Me.CopyToolStripMenuItem.Text = "Copy"
+    '
     'tabCaptures
     '
     Me.tabCaptures.BackColor = System.Drawing.Color.White
@@ -640,13 +652,10 @@ Partial Class frmMain
     '
     'ImageList1
     '
-    If Not "IsDNSI" Then
-      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-      Me.ImageList1.Images.SetKeyName(0, "fct.PNG")
-      Me.ImageList1.Images.SetKeyName(1, "prop.PNG")
-    End If
-
+    Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
     Me.ImageList1.TransparentColor = System.Drawing.Color.White
+    Me.ImageList1.Images.SetKeyName(0, "fct.PNG")
+    Me.ImageList1.Images.SetKeyName(1, "prop.PNG")
     '
     'tabMatches
     '
@@ -1525,18 +1534,6 @@ Partial Class frmMain
     Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
     Me.ToolStripSeparator9.Size = New System.Drawing.Size(6, 25)
     '
-    'Group_ContextMenuStrip1
-    '
-    Me.Group_ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyToolStripMenuItem})
-    Me.Group_ContextMenuStrip1.Name = "Group_ContextMenuStrip1"
-    Me.Group_ContextMenuStrip1.Size = New System.Drawing.Size(153, 48)
-    '
-    'CopyToolStripMenuItem
-    '
-    Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
-    Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-    Me.CopyToolStripMenuItem.Text = "Copy"
-    '
     'frmMain
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1575,6 +1572,7 @@ Partial Class frmMain
     Me.SplitContainer6.ResumeLayout(False)
     Me.TabControl2.ResumeLayout(False)
     Me.tabGroups.ResumeLayout(False)
+    Me.Group_ContextMenuStrip1.ResumeLayout(False)
     Me.tabCaptures.ResumeLayout(False)
     Me.tabMatches.ResumeLayout(False)
     Me.GroupBox6.ResumeLayout(False)
@@ -1611,7 +1609,6 @@ Partial Class frmMain
     Me.MenuStrip1.PerformLayout()
     Me.ToolStrip1.ResumeLayout(False)
     Me.ToolStrip1.PerformLayout()
-    Me.Group_ContextMenuStrip1.ResumeLayout(False)
     Me.ResumeLayout(False)
     Me.PerformLayout()
 
