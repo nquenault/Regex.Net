@@ -1,27 +1,29 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿Imports System.Windows
+
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frmMain
-    Inherits System.Windows.Forms.Form
+  Inherits System.Windows.Forms.Form
 
-    'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+  'Form remplace la méthode Dispose pour nettoyer la liste des composants.
+  <System.Diagnostics.DebuggerNonUserCode()> _
+  Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+    Try
+      If disposing AndAlso components IsNot Nothing Then
+        components.Dispose()
+      End If
+    Finally
+      MyBase.Dispose(disposing)
+    End Try
+  End Sub
 
-    'Requise par le Concepteur Windows Form
-    Private components As System.ComponentModel.IContainer
+  'Requise par le Concepteur Windows Form
+  Private components As System.ComponentModel.IContainer
 
-    'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
-    'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
-    'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
-    Private Sub InitializeComponent()
+  'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
+  'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
+  'Ne la modifiez pas à l'aide de l'éditeur de code.
+  <System.Diagnostics.DebuggerStepThrough()> _
+  Private Sub InitializeComponent()
     Me.components = New System.ComponentModel.Container()
     Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
     Me.MainTabControl = New System.Windows.Forms.TabControl()
@@ -638,10 +640,39 @@ Partial Class frmMain
     '
     'ImageList1
     '
-    Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-    Me.ImageList1.TransparentColor = System.Drawing.Color.White
-    Me.ImageList1.Images.SetKeyName(0, "fct.PNG")
-    Me.ImageList1.Images.SetKeyName(1, "prop.PNG")
+    Dim IsDNSI As Boolean = If("_IsDNSI_" = "true", True, False)
+
+    If IsDNSI Then
+      Dim fct_sb = New System.Text.StringBuilder()
+
+      fct_sb.Append("iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA")
+      fct_sb.Append("CXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQBwYWludC5uZXQgNC4wLjEwrQoKwAAAAWdJREFUOE+dks9LwmAcxv1jgg6ReAk6eO5Y4j8RFGUFXsq0YwSZ")
+      fct_sb.Append("HrJJipfKX9MuedKCoFNJsukgiCKcLk2dQ4VgOzzNvZnmdrAOH8b7vM/3+3kPMwH4N4bhOJ3nDgr7BUi8pB6H+a+SEYNBnua1b5fvqjG505VHkUqSNiDeiJDTChr+pnbu")
+      fct_sb.Append("vJEFP8VPKQmOo0FfpXEQTGuX/WL5sgw5qUCmCHXfh7agJ/T0tlEubFFkHTmI523Ip98LggoE6h2+RT8x1qvEenunmjMpUGfEHF2KgVljhwsiCsRwGwH7CVxml7FxQNye")
+      fct_sb.Append("ALPCgnNwyG1c44V6hXfhCCFrGG6zm5T69mo5ifwjjUw2hVCUmCv3FcRscbCrRRTXS3BbPIhYIzic88I1u6u3jVNjaojbEnhYzmu24/kAtmd2IHGS8cA4raeW9gKPZQ/O")
+      fct_sb.Append("aScaTEONJ/zD+jTZJjantiDkBfVIMl3pLxiGk2IYTgZMXxb0qsO8O+x2AAAAAElFTkSuQmCC")
+
+      Dim fct = System.Drawing.Bitmap.FromStream(New System.IO.MemoryStream(System.Convert.FromBase64String(fct_sb.ToString())))
+
+      Dim pro_sb = New System.Text.StringBuilder()
+
+      pro_sb.Append("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0")
+      pro_sb.Append("IDQuMC4xMK0KCsAAAAFzSURBVDhPpZAvkIQgFIeNG43WjUbjVqORSCUajVaj0UglEo1UIpFIJRqNv3uoe+vtn7m5OWa+EWF+33u8DMC/eDkwWsGaCSF4zGqAmnbk2GMa")
+      pro_sb.Append("Ogwdh3MG0kgoq3+GE95ZYJnRt5y+7YPYYfUCwTCMHSFbDG54FSxLxNCyLaTlIUnh0GJ1DIttAHOFUhxM18h6GXBHG0KNFEjt7pLmVu1hzylcYzEVFp1jnBhqWe0CRV0b")
+      pro_sb.Append("F7fwGgd0okF0PYTYJexWI8wVnCxgJwqLHEzUuE3lLpjduoWj38PjpLZvsAK8IYkvUF1zXLIc5TWDYA14z1GNBTLrPD2dCqW304RjDNu/o2EmidclivwCwTkmqdLVNitl")
+      pro_sb.Append("FEpxErxbWs/oeA0fIuIC1Kmb08ATmbWfBetKnR2Ej4KjA6Xtxnl/xsdfBM8rVU1tp8op/KvgXum8P+Notm8FLt2cFhX+hooj0sanLj7NoOt6NE1DsAfs4HxGvBU8H/wN")
+      pro_sb.Append("ZF+Z+wBsulJQ1QAAAABJRU5ErkJggg==")
+
+      Dim prop = System.Drawing.Bitmap.FromStream(New System.IO.MemoryStream(System.Convert.FromBase64String(pro_sb.ToString())))
+
+      Me.ImageList1.Images.Add("fct.PNG", fct)
+      Me.ImageList1.Images.Add("prop.PNG", prop)
+    Else
+      Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+      Me.ImageList1.TransparentColor = System.Drawing.Color.White
+      Me.ImageList1.Images.SetKeyName(0, "fct.PNG")
+      Me.ImageList1.Images.SetKeyName(1, "prop.PNG")
+    End If
     '
     'tabMatches
     '
@@ -1611,151 +1642,151 @@ Partial Class frmMain
     Me.PerformLayout()
 
   End Sub
-    Friend WithEvents MainTabControl As System.Windows.Forms.TabControl
-    Friend WithEvents tabReplace As System.Windows.Forms.TabPage
-    Friend WithEvents tabIsMatch As System.Windows.Forms.TabPage
-    Friend WithEvents tabMatch As System.Windows.Forms.TabPage
-    Friend WithEvents tabMatches As System.Windows.Forms.TabPage
-    Friend WithEvents tabSplit As System.Windows.Forms.TabPage
-    Friend WithEvents tabEscape As System.Windows.Forms.TabPage
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents tabUnescape As System.Windows.Forms.TabPage
-    Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
-    Friend WithEvents txtEscapeSource As System.Windows.Forms.RichTextBox
-    Friend WithEvents txtEscapeResult As System.Windows.Forms.RichTextBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
-    Friend WithEvents txtUnescapeSource As System.Windows.Forms.RichTextBox
-    Friend WithEvents txtUnescapeResult As System.Windows.Forms.RichTextBox
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
-    Friend WithEvents SplitContainer3 As System.Windows.Forms.SplitContainer
-    Friend WithEvents txtSplitSource As System.Windows.Forms.RichTextBox
-    Friend WithEvents txtSplitPattern As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents lstSplitResults As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents SplitContainer4 As System.Windows.Forms.SplitContainer
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents txtIsMatchPattern As System.Windows.Forms.TextBox
-    Friend WithEvents txtIsMatchSource As System.Windows.Forms.RichTextBox
-    Friend WithEvents SplitContainer5 As System.Windows.Forms.SplitContainer
-    Friend WithEvents txtReplaceSource As System.Windows.Forms.RichTextBox
-    Friend WithEvents txtReplacePattern As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents txtReplaceResult As System.Windows.Forms.RichTextBox
-    Friend WithEvents txtReplaceReplacement As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents SplitContainer6 As System.Windows.Forms.SplitContainer
-    Friend WithEvents txtMatchSource As System.Windows.Forms.RichTextBox
-    Friend WithEvents txtMatchPattern As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TabControl2 As System.Windows.Forms.TabControl
-    Friend WithEvents tabGroups As System.Windows.Forms.TabPage
-    Friend WithEvents lstMatchGroups As System.Windows.Forms.ListView
-    Friend WithEvents colMatchGroupsNum As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchGroupsIndex As System.Windows.Forms.ColumnHeader
-    Friend WithEvents tabCaptures As System.Windows.Forms.TabPage
-    Friend WithEvents lstMatchCaptures As System.Windows.Forms.ListView
-    Friend WithEvents colMatchCapturesNum As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchGroupsLength As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchGroupsCaptures As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchGroupsSuccess As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchGroupsValue As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchCapturesIndex As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchCapturesLength As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchCapturesValue As System.Windows.Forms.ColumnHeader
-    Friend WithEvents SplitContainer7 As System.Windows.Forms.SplitContainer
-    Friend WithEvents txtMatchesSource As System.Windows.Forms.RichTextBox
-    Friend WithEvents txtMatchesPattern As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TabControl3 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents lstMatchesGroups As System.Windows.Forms.ListView
-    Friend WithEvents colMatchesGroupsNum As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchesGroupsIndex As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchesGroupsLength As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchesGroupsCaptures As System.Windows.Forms.ColumnHeader
-    Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
-    Friend WithEvents lstMatchesCaptures As System.Windows.Forms.ListView
-    Friend WithEvents colMatchesGroupsSuccess As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchesGroupsValue As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchesCapturesNum As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchesCapturesIndex As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchesCapturesLength As System.Windows.Forms.ColumnHeader
-    Friend WithEvents colMatchesCapturesValue As System.Windows.Forms.ColumnHeader
-    Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
-    Friend WithEvents pbTotal As System.Windows.Forms.ToolStripProgressBar
-    Friend WithEvents lblStatus As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents lblInstantExec As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MiniJeuRegexToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NouvellePartieToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ExecuterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ExécutionInstantannToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MementoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MementoRapideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MementoSurLeSiteDuZeroToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TutorielsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SurRegularexpressionsinfoENToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SurLeSiteDuZero2PartiesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ExemplesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ReplaceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NomDhôteParRienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents IsMatchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AdresseIPToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EmailToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EstUneAdresseEmailToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MatchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EmailToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MatchesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EmailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CSVToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SplitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CSVToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents LiensMSDNToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexReplaceToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexIsMatchToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexMatchToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexMatchesToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexSplitToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexEscapeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexUnescapeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegexOptionsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents AProposToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButtonCultureInvariant As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButtonExplicitCapture As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButtonIgnoreCase As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButtonIgnorePatternWhitespace As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButtonMultiline As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButtonRightToLeft As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripButtonSingleline As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents picIsMatchResult As System.Windows.Forms.PictureBox
-    Friend WithEvents ConditionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents OuvrirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MainTabControl As System.Windows.Forms.TabControl
+  Friend WithEvents tabReplace As System.Windows.Forms.TabPage
+  Friend WithEvents tabIsMatch As System.Windows.Forms.TabPage
+  Friend WithEvents tabMatch As System.Windows.Forms.TabPage
+  Friend WithEvents tabMatches As System.Windows.Forms.TabPage
+  Friend WithEvents tabSplit As System.Windows.Forms.TabPage
+  Friend WithEvents tabEscape As System.Windows.Forms.TabPage
+  Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+  Friend WithEvents tabUnescape As System.Windows.Forms.TabPage
+  Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
+  Friend WithEvents txtEscapeSource As System.Windows.Forms.RichTextBox
+  Friend WithEvents txtEscapeResult As System.Windows.Forms.RichTextBox
+  Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+  Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
+  Friend WithEvents txtUnescapeSource As System.Windows.Forms.RichTextBox
+  Friend WithEvents txtUnescapeResult As System.Windows.Forms.RichTextBox
+  Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+  Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+  Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+  Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+  Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
+  Friend WithEvents SplitContainer3 As System.Windows.Forms.SplitContainer
+  Friend WithEvents txtSplitSource As System.Windows.Forms.RichTextBox
+  Friend WithEvents txtSplitPattern As System.Windows.Forms.TextBox
+  Friend WithEvents Label1 As System.Windows.Forms.Label
+  Friend WithEvents lstSplitResults As System.Windows.Forms.ListView
+  Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+  Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+  Friend WithEvents SplitContainer4 As System.Windows.Forms.SplitContainer
+  Friend WithEvents Label2 As System.Windows.Forms.Label
+  Friend WithEvents txtIsMatchPattern As System.Windows.Forms.TextBox
+  Friend WithEvents txtIsMatchSource As System.Windows.Forms.RichTextBox
+  Friend WithEvents SplitContainer5 As System.Windows.Forms.SplitContainer
+  Friend WithEvents txtReplaceSource As System.Windows.Forms.RichTextBox
+  Friend WithEvents txtReplacePattern As System.Windows.Forms.TextBox
+  Friend WithEvents Label3 As System.Windows.Forms.Label
+  Friend WithEvents txtReplaceResult As System.Windows.Forms.RichTextBox
+  Friend WithEvents txtReplaceReplacement As System.Windows.Forms.TextBox
+  Friend WithEvents Label4 As System.Windows.Forms.Label
+  Friend WithEvents SplitContainer6 As System.Windows.Forms.SplitContainer
+  Friend WithEvents txtMatchSource As System.Windows.Forms.RichTextBox
+  Friend WithEvents txtMatchPattern As System.Windows.Forms.TextBox
+  Friend WithEvents Label5 As System.Windows.Forms.Label
+  Friend WithEvents TabControl2 As System.Windows.Forms.TabControl
+  Friend WithEvents tabGroups As System.Windows.Forms.TabPage
+  Friend WithEvents lstMatchGroups As System.Windows.Forms.ListView
+  Friend WithEvents colMatchGroupsNum As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchGroupsIndex As System.Windows.Forms.ColumnHeader
+  Friend WithEvents tabCaptures As System.Windows.Forms.TabPage
+  Friend WithEvents lstMatchCaptures As System.Windows.Forms.ListView
+  Friend WithEvents colMatchCapturesNum As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchGroupsLength As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchGroupsCaptures As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchGroupsSuccess As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchGroupsValue As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchCapturesIndex As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchCapturesLength As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchCapturesValue As System.Windows.Forms.ColumnHeader
+  Friend WithEvents SplitContainer7 As System.Windows.Forms.SplitContainer
+  Friend WithEvents txtMatchesSource As System.Windows.Forms.RichTextBox
+  Friend WithEvents txtMatchesPattern As System.Windows.Forms.TextBox
+  Friend WithEvents Label6 As System.Windows.Forms.Label
+  Friend WithEvents TabControl3 As System.Windows.Forms.TabControl
+  Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+  Friend WithEvents lstMatchesGroups As System.Windows.Forms.ListView
+  Friend WithEvents colMatchesGroupsNum As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchesGroupsIndex As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchesGroupsLength As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchesGroupsCaptures As System.Windows.Forms.ColumnHeader
+  Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
+  Friend WithEvents lstMatchesCaptures As System.Windows.Forms.ListView
+  Friend WithEvents colMatchesGroupsSuccess As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchesGroupsValue As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchesCapturesNum As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchesCapturesIndex As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchesCapturesLength As System.Windows.Forms.ColumnHeader
+  Friend WithEvents colMatchesCapturesValue As System.Windows.Forms.ColumnHeader
+  Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
+  Friend WithEvents pbTotal As System.Windows.Forms.ToolStripProgressBar
+  Friend WithEvents lblStatus As System.Windows.Forms.ToolStripStatusLabel
+  Friend WithEvents lblInstantExec As System.Windows.Forms.ToolStripStatusLabel
+  Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+  Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+  Friend WithEvents FileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MiniJeuRegexToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents NouvellePartieToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents OptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ExecuterToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ToolStripMenuItem5 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents ExécutionInstantannToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MementoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MementoRapideToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MementoSurLeSiteDuZeroToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents TutorielsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents SurRegularexpressionsinfoENToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents SurLeSiteDuZero2PartiesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ExemplesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ReplaceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents NomDhôteParRienToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents IsMatchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents AdresseIPToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents EmailToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents EstUneAdresseEmailToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MatchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents EmailToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents MatchesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents EmailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents CSVToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents SplitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents CSVToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents LiensMSDNToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexReplaceToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexIsMatchToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexMatchToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexMatchesToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexSplitToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexEscapeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexUnescapeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents RegexOptionsToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents AProposToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
+  Friend WithEvents ToolStripButtonCultureInvariant As System.Windows.Forms.ToolStripButton
+  Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents ToolStripButtonExplicitCapture As System.Windows.Forms.ToolStripButton
+  Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents ToolStripButtonIgnoreCase As System.Windows.Forms.ToolStripButton
+  Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents ToolStripButtonIgnorePatternWhitespace As System.Windows.Forms.ToolStripButton
+  Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents ToolStripButtonMultiline As System.Windows.Forms.ToolStripButton
+  Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents ToolStripButtonRightToLeft As System.Windows.Forms.ToolStripButton
+  Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents ToolStripButtonSingleline As System.Windows.Forms.ToolStripButton
+  Friend WithEvents ToolStripSeparator9 As System.Windows.Forms.ToolStripSeparator
+  Friend WithEvents picIsMatchResult As System.Windows.Forms.PictureBox
+  Friend WithEvents ConditionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+  Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
+  Friend WithEvents OuvrirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
   Friend WithEvents ToolStripMenuItem6 As System.Windows.Forms.ToolStripSeparator
   Friend WithEvents Group_ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
   Friend WithEvents CopyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
