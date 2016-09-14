@@ -652,10 +652,12 @@ Partial Class frmMain
     '
     'ImageList1
     '
+    'If Not "isdnsi" Then
     Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-    Me.ImageList1.TransparentColor = System.Drawing.Color.White
     Me.ImageList1.Images.SetKeyName(0, "fct.PNG")
     Me.ImageList1.Images.SetKeyName(1, "prop.PNG")
+    'End If
+    Me.ImageList1.TransparentColor = System.Drawing.Color.White
     '
     'tabMatches
     '
