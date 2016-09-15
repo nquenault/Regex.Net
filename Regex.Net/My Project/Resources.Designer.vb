@@ -103,10 +103,20 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property run() As System.Drawing.Bitmap
+        Friend ReadOnly Property prop() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("prop", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Image semblable à System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property run() As System.Drawing.Image
             Get
                 Dim obj As Object = ResourceManager.GetObject("run", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
+                Return CType(obj,System.Drawing.Image)
             End Get
         End Property
         
