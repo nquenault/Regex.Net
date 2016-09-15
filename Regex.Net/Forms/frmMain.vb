@@ -10,6 +10,11 @@ Public Class frmMain
 
     Private UpdateOnChanges As Boolean = True
 
+  Public Sub New()
+    Application.EnableVisualStyles()
+    InitializeComponent()
+  End Sub
+
 #Region "Menu Fichier..."
     Private Sub ExitToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ExitToolStripMenuItem.Click
         End
@@ -328,7 +333,6 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         Me.Text = Application.ProductName
-    Application.EnableVisualStyles()
 
         With pbTotal
             .Visible = False
