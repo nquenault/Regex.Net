@@ -61,73 +61,73 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property fct() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("fct", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property lightbroken() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("lightbroken", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property lightoff() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("lightoff", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property lighton() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("lighton", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property prop() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("prop", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Image semblable à System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property run() As System.Drawing.Image
-            Get
-                Dim obj As Object = ResourceManager.GetObject("run", resourceCulture)
-                Return CType(obj,System.Drawing.Image)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property struc() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("struc", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
+    '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+    '''</summary>
+    Friend ReadOnly Property fct() As System.Drawing.Bitmap
+      Get
+        Dim obj As Object = ResourceManager.GetObject("fct", resourceCulture)
+        Return CType(obj, System.Drawing.Bitmap)
+      End Get
+    End Property
+
+    '''<summary>
+    '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+    '''</summary>
+    Friend ReadOnly Property lightbroken() As System.Drawing.Bitmap
+      Get
+        Dim obj As Object = ResourceManager.GetObject("lightbroken", resourceCulture)
+        Return CType(obj, System.Drawing.Bitmap)
+      End Get
+    End Property
+
+    '''<summary>
+    '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+    '''</summary>
+    Friend ReadOnly Property lightoff() As System.Drawing.Bitmap
+      Get
+        Dim obj As Object = ResourceManager.GetObject("lightoff", resourceCulture)
+        Return CType(obj, System.Drawing.Bitmap)
+      End Get
+    End Property
+
+    '''<summary>
+    '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+    '''</summary>
+    Friend ReadOnly Property lighton() As System.Drawing.Bitmap
+      Get
+        Dim obj As Object = ResourceManager.GetObject("lighton", resourceCulture)
+        Return CType(obj, System.Drawing.Bitmap)
+      End Get
+    End Property
+
+    '''<summary>
+    '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+    '''</summary>
+    Friend ReadOnly Property prop() As System.Drawing.Bitmap
+      Get
+        Dim obj As Object = ResourceManager.GetObject("prop", resourceCulture)
+        Return CType(obj, System.Drawing.Bitmap)
+      End Get
+    End Property
+
+    '''<summary>
+    '''  Recherche une ressource localisée de type System.Drawing.Image semblable à System.Drawing.Bitmap.
+    '''</summary>
+    Friend ReadOnly Property run() As System.Drawing.Image
+      Get
+        Dim obj As Object = ResourceManager.GetObject("run", resourceCulture)
+        Return CType(obj, System.Drawing.Image)
+      End Get
+    End Property
+
+    '''<summary>
+    '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+    '''</summary>
+    Friend ReadOnly Property struc() As System.Drawing.Bitmap
+      Get
+        Dim obj As Object = ResourceManager.GetObject("struc", resourceCulture)
+        Return CType(obj, System.Drawing.Bitmap)
+      End Get
+    End Property
     End Module
 End Namespace
