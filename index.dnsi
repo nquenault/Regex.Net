@@ -1,7 +1,7 @@
 <dnsi>
 	<target value="winexe" />
 	<autorun value="true" />
-	<entrypoint value="frmMain" />
+	<!--<entrypoint value="frmMain" />-->
 
 	<basepath value="http://rawgitn.nqs.fr/regex.net/master/Regex.Net/" />
 
