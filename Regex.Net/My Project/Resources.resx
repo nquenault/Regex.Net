@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="run" type="System.Drawing.Image, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKRJREFUKFNj/P//PwPxAKgaAlYc2QVn42IwwCUSZkQQ1ICi2rJMH78GhOqoKUEbbi3GrwGhOniCd9n+bPwaEKp9upyBqoEoalEALhsQqh2bLTI2xAKV2jbr6xQrSKRxL9+1Fy1wEKrNa/TgSvkTWDCVgmIGrluvVBliKi6lKKpV8qXwK0VRLZ0hiMdUiBMQLhFJ5sTqVmSPIlQTVIpiNsEkBVQAAEugJKSFjaA0AAAAAElFTkSuQmCC</value>
+    <value>
+      iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKRJREFUKFNj/P//PwPxAKgaAlYc2QVn42IwwCUSZkQQ1ICi2rJMH78GhOqoKUEbbi3GrwGhOniCd9n+bPwaEKp9upyBqoEoalEALhsQqh2bLTI2xAKV2jbr6xQrSKRxL9+1Fy1wEKrNa/TgSvkTWDCVgmIGrluvVBliKi6lKKpV8qXwK0VRLZ0hiMdUiBMQLhFJ5sTqVmSPIlQTVIpiNsEkBVQAAEugJKSFjaA0AAAAAElFTkSuQmCC
+    </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
   <data name="fct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fct.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
