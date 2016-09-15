@@ -325,38 +325,10 @@ Public Class frmMain
     End Sub
 #End Region
 
-  Private Sub InitDNSI()
-    Dim fct_sb = New System.Text.StringBuilder()
-
-    fct_sb.Append("iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA")
-    fct_sb.Append("CXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQBwYWludC5uZXQgNC4wLjEwrQoKwAAAAWdJREFUOE+dks9LwmAcxv1jgg6ReAk6eO5Y4j8RFGUFXsq0YwSZ")
-    fct_sb.Append("HrJJipfKX9MuedKCoFNJsukgiCKcLk2dQ4VgOzzNvZnmdrAOH8b7vM/3+3kPMwH4N4bhOJ3nDgr7BUi8pB6H+a+SEYNBnua1b5fvqjG505VHkUqSNiDeiJDTChr+pnbu")
-    fct_sb.Append("vJEFP8VPKQmOo0FfpXEQTGuX/WL5sgw5qUCmCHXfh7agJ/T0tlEubFFkHTmI523Ip98LggoE6h2+RT8x1qvEenunmjMpUGfEHF2KgVljhwsiCsRwGwH7CVxml7FxQNye")
-    fct_sb.Append("ALPCgnNwyG1c44V6hXfhCCFrGG6zm5T69mo5ifwjjUw2hVCUmCv3FcRscbCrRRTXS3BbPIhYIzic88I1u6u3jVNjaojbEnhYzmu24/kAtmd2IHGS8cA4raeW9gKPZQ/O")
-    fct_sb.Append("aScaTEONJ/zD+jTZJjantiDkBfVIMl3pLxiGk2IYTgZMXxb0qsO8O+x2AAAAAElFTkSuQmCC")
-
-    Dim fct = System.Drawing.Bitmap.FromStream(New System.IO.MemoryStream(System.Convert.FromBase64String(fct_sb.ToString())))
-
-    Dim pro_sb = New System.Text.StringBuilder()
-
-    pro_sb.Append("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0")
-    pro_sb.Append("IDQuMC4xMK0KCsAAAAFzSURBVDhPpZAvkIQgFIeNG43WjUbjVqORSCUajVaj0UglEo1UIpFIJRqNv3uoe+vtn7m5OWa+EWF+33u8DMC/eDkwWsGaCSF4zGqAmnbk2GMa")
-    pro_sb.Append("Ogwdh3MG0kgoq3+GE95ZYJnRt5y+7YPYYfUCwTCMHSFbDG54FSxLxNCyLaTlIUnh0GJ1DIttAHOFUhxM18h6GXBHG0KNFEjt7pLmVu1hzylcYzEVFp1jnBhqWe0CRV0b")
-    pro_sb.Append("F7fwGgd0okF0PYTYJexWI8wVnCxgJwqLHEzUuE3lLpjduoWj38PjpLZvsAK8IYkvUF1zXLIc5TWDYA14z1GNBTLrPD2dCqW304RjDNu/o2EmidclivwCwTkmqdLVNitl")
-    pro_sb.Append("FEpxErxbWs/oeA0fIuIC1Kmb08ATmbWfBetKnR2Ej4KjA6Xtxnl/xsdfBM8rVU1tp8op/KvgXum8P+Notm8FLt2cFhX+hooj0sanLj7NoOt6NE1DsAfs4HxGvBU8H/wN")
-    pro_sb.Append("ZF+Z+wBsulJQ1QAAAABJRU5ErkJggg==")
-
-    Dim prop = System.Drawing.Bitmap.FromStream(New System.IO.MemoryStream(System.Convert.FromBase64String(pro_sb.ToString())))
-
-    Me.ImageList1.Images.Add("fct.PNG", fct)
-    Me.ImageList1.Images.Add("prop.PNG", prop)
-
-    MainTabControl.Refresh()
-  End Sub
 
     Private Sub frmMain_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         Me.Text = Application.ProductName
-    InitDNSI()
+    Application.EnableVisualStyles()
 
         With pbTotal
             .Visible = False
