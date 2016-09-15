@@ -11,6 +11,7 @@
 	<!--<link src="./My Project/Application.Designer.vb" />-->
 	<link src="./My Project/Resources.Designer.vb" />
 	<link src="./My Project/Settings.Designer.vb" />
+	<link src="./My Project/Resources.resx" />
 
 	<link src="./Forms/frmMain.vb" type="form" />
 	<link src="./Forms/frmMemento.vb" type="form" />
