@@ -28,4 +28,5 @@
 	<resource name="lighton" src="./Resources/lighton.PNG" />
 	<resource name="run" src="./Resources/run.PNG" />
 	<resource name="struc" src="./Resources/struc.PNG" />
+	<resource name="prop" src="./Resources/prop.PNG" />
 </dnsi>
