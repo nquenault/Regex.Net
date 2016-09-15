@@ -1162,7 +1162,7 @@ Partial Class frmMain
     '
     'ExecuterToolStripMenuItem
     '
-    Me.ExecuterToolStripMenuItem.Image = Global.RegexDotNet.My.Resources.Resources.run
+    Me.ExecuterToolStripMenuItem.Image = My.Resources.Resources.run
     Me.ExecuterToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.White
     Me.ExecuterToolStripMenuItem.Name = "ExecuterToolStripMenuItem"
     Me.ExecuterToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
